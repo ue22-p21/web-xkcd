@@ -1,6 +1,6 @@
 # web-xkcd
 
-Intro to Javascript networking
+Intro to Javascript networking and asynchronous programming
 
 ## Instructions
 
