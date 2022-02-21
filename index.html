@@ -7,13 +7,13 @@
 </head>
 
 <body>
-    <h1> a small networking app</h1>
+    <h1> an app with some networking</h1>
 
     for browsing the xkcd comics
 
     <br>
     <hr>
-    <div id="buttons">
+    <div class="centered">
         <button id="previous">←</button>
         <button id="reset">↺</button>
         <button id="next">→</button>
@@ -27,5 +27,120 @@
 
 <hr>
 <hr>
+
+<!-- DO NOT EDIT THE TEXT BELOW
+    it is preprocessed from the markdown file
+    index.md - edit that file instead ! -->
+
+<h1>step 0</h1>
+
+<p>use your browser to open in a separate page the URLs</p>
+
+<ul>
+<li><code>https://xkcd.now.sh/?comic=latest</code></li>
+<li><code>https://xkcd.now.sh/?comic=2583</code></li>
+<li><code>https://xkcd.now.sh/?comic=2582</code></li>
+</ul>
+
+<p>what does that content look like ? <br />
+what can be the meaning of <code>num</code> and <code>img</code> fields ?</p>
+
+<p><em>hint</em>: numbers are sequential</p>
+
+<h1>requirements</h1>
+
+<ul>
+<li>use the usual naming scheme, i.e.
+<ul>
+<li>variables and functions in <code>lowercase</code> or <code>lowerCamelCase</code></li>
+<li>class names, if any, in <code>UpperCamelCase</code></li>
+<li>global constants in <code>UPPERCASE</code></li>
+</ul></li>
+<li>as far as possible, your code should have the smallest possible footprint on
+the global namespace, i.e.
+<ul>
+<li>avoid declaring globals</li>
+<li>as far as possible, confine them into functions; this is to avoid any
+possible conflict with other applications</li>
+</ul></li>
+</ul>
+
+<h1>step 1</h1>
+
+<p>write a function <code>fetchIssue(num)</code> that</p>
+
+<ul>
+<li>fetches the URL <br />
+<code>https://xkcd.now.sh/?comic=</code><em><code>num</code></em></li>
+<li>decodes it contents</li>
+<li>displays the corresponding 'num' in the status area</li>
+</ul>
+
+<h2>step 1b</h2>
+
+<p>check your work, by connecting the 'reset' button (↺) to <code>fetchIssue("latest")</code></p>
+
+<p>when else could/should we call this, to have the page start up more nicely ?</p>
+
+<p>note that the status area <strong>must display a number</strong> (as opposed to
+<code>latest</code>)</p>
+
+<h2>step 1c</h2>
+
+<p>enhance the function so that the corresponding comics gets displayed in the <code>&lt;img&gt;</code> tag</p>
+
+<h1>step 2</h1>
+
+<p>improve the display so that the image, as well as the status area, are centered
+in the page and do not overlap each other</p>
+
+<h1>step 3</h1>
+
+<p>for now we can only get the latest comic; we want to be able to move back and
+forth using the 2 arrow buttons</p>
+
+<p>change your code so that the application behaves that way; a suggested path to this end:</p>
+
+<ul>
+<li>change <code>fetchIssue</code> so that it returns the current <code>num</code> in addition to displaying it</li>
+<li>keep the current number in a state (a variable shared amongst all the
+functions)</li>
+<li>write <code>next()</code> and <code>previous()</code> functions and connect them to the buttons</li>
+<li>optionally, keep track of the latest number, and enable the 'next' button only
+when relevant</li>
+</ul>
+
+<h2>step 3b (optional)</h2>
+
+<ul>
+<li>keep track of the latest issue number, and disable the prev/next buttons when
+they will be ineffective</li>
+<li>display the issue date in addition to its number</li>
+<li>any improvement that you deem useful...</li>
+</ul>
+
+<h1>step 4 (optional)</h1>
+
+<ul>
+<li>refactor your code so that it becomes reusable</li>
+</ul>
+
+<p>for example, you could write a class, that gets created from 5 css selectors, so
+that the gist of <code>code.js</code> becomes (for example)</p>
+
+<pre><code>const xkcdBrower = XkcdBrowser(
+    // how to find the 5 elements, from css selectors
+    "#xkcd&gt;img",
+    "#num",
+    "#previous",
+    "#reset",
+    "#next"
+).start()
+</code></pre>
+
+<ul>
+<li>add a second, independant, area in the page, that implements the same logic - possibly within a completely different layout</li>
+</ul>
+
 
 </body>
