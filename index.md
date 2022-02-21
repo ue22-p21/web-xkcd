@@ -79,7 +79,7 @@ for example, you could write a class, that gets created from 5 css selectors, so
 that the gist of `code.js` becomes (for example)
 
 ```
-const xkcdBrower = XkcdBrowser(
+new XkcdBrowser(
     // how to find the 5 elements, from css selectors
     "#xkcd>img",
     "#num",
