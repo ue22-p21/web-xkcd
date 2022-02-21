@@ -75,4 +75,11 @@ window.addEventListener(
                 "#reset",
                 "#next"
             ).start()
-    })
+            new XkcdBrowser(
+                // how to find the 5 elements, from css selectors
+                "#img2",
+                "#info2",
+                "#previous2",
+                "#reset2",
+                "#next2"
+            ).start()    })
