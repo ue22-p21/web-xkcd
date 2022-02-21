@@ -17,3 +17,11 @@ h1, h2 {
 
   h1 { border-top: 2px groove blue; }
   h2 { border-top: 1px dotted blue; }
+
+  #buttons, #xkcd {
+      margin-bottom: 20px;
+  }
+
+  .alt {
+      font-style: italic;
+  }
