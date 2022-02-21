@@ -1,0 +1,10 @@
+#buttons {
+    display:flex;
+    justify-content: space-evenly;
+}
+
+#num {
+    border: 1px solid blue;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
