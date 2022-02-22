@@ -15,9 +15,9 @@ class XkcdBrowser {
         this.max_num = null
     }
 
-    fetchIssue(num) {
+    async fetchIssue(num) {
         let url = `${XKCD}${num}`
-        return fetch(url)
+        return await fetch(url)
             .then(response => response.json())
             .then(data => {
                     let img_url = data.img
@@ -34,8 +34,8 @@ class XkcdBrowser {
             })
         }
 
-    reset() {
-        this.fetchIssue("latest")
+    async reset() {
+        await this.fetchIssue("latest")
             .then( (max_num) => this.max_num = max_num)
             .then(() => this.enable_buttons())
         }
@@ -68,8 +68,8 @@ class XkcdBrowser {
         document.querySelector(this.s_nex).disabled = !(this.current_num < this.max_num)
     }
 
-    start() {
-        this.reset()
+    async start() {
+        await this.reset()
         document.querySelector(this.s_res).addEventListener(
             'click', ()=>this.reset())
         document.querySelector(this.s_pre).addEventListener(
