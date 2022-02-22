@@ -12,11 +12,12 @@ class XkcdBrowser {
         // we call reset() upon page load, so..
         this.current_num = null
         this.data = null
+        this.max_num = null
     }
 
     fetchIssue(num) {
         let url = `${XKCD}${num}`
-        fetch(url)
+        return fetch(url)
             .then(response => response.json())
             .then(data => {
                     let img_url = data.img
@@ -24,6 +25,7 @@ class XkcdBrowser {
                     this.current_num = data.num
                     this.data = data
                     this.updateInfo()
+                    return data.num
                 })
             .catch(error => {
                 document.querySelector(this.s_num).textContent = `FETCH FAILED: ${error}`
@@ -34,15 +36,17 @@ class XkcdBrowser {
 
     reset() {
         this.fetchIssue("latest")
-    }
+            .then( (max_num) => this.max_num = max_num)
+            .then(() => this.enable_buttons())
+        }
 
     next() {
-        let next = this.current_num + 1
-        this.fetchIssue(next)
+        this.fetchIssue(this.current_num + 1)
+            .then(() => this.enable_buttons())
     }
     previous() {
-        let previous = this.current_num - 1
-        this.fetchIssue(previous)
+        this.fetchIssue(this.current_num - 1)
+            .then(() => this.enable_buttons())
     }
 
     updateInfo() {
@@ -52,6 +56,16 @@ class XkcdBrowser {
         info += `<p>Issue #${data.num} (${data.day}/${data.month}/${data.day})</p>`
         info += `<p class="alt">${data.alt}</p>`
                 document.querySelector(this.s_num).innerHTML = info
+    }
+
+    enable_buttons() {
+        console.log(this)
+        console.log(this.current_num)
+        console.log(this.current_num > 1)
+        // enabled if num > 1
+        document.querySelector(this.s_pre).disabled = !(this.current_num > 1)
+        // enabled if num < max_num
+        document.querySelector(this.s_nex).disabled = !(this.current_num < this.max_num)
     }
 
     start() {
