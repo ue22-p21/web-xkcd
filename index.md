@@ -3,8 +3,9 @@
 use your browser to open in a separate page the URLs
 
 * `https://xkcd.now.sh/?comic=latest`
-* `https://xkcd.now.sh/?comic=2583`
-* `https://xkcd.now.sh/?comic=2582`
+* `https://xkcd.now.sh/?comic=2584`
+* `https://xkcd.now.sh/?comic=1`
+* `https://xkcd.now.sh/?comic=0`
 
 what does that content look like ?  
 what can be the meaning of `num` and `img` fields ?
@@ -57,21 +58,17 @@ forth using the 2 arrow buttons
 
 change your code so that the application behaves that way; a suggested path to this end:
 
-* change `fetchIssue` so that it returns the current `num` in addition to displaying it
 * keep the current number in a state (a variable shared amongst all the
   functions)
 * write `next()` and `previous()` functions and connect them to the buttons
 * optionally, keep track of the latest number, and enable the 'next' button only
   when relevant
 
-## step 3b (optional)
+# optional steps
 
-* keep track of the latest issue number, and disable the prev/next buttons when
-  they will be ineffective
-* display the issue date in addition to its number
-* any improvement that you deem useful...
+can be done independantly (in no particular order)
 
-# step 4 (optional)
+## option A
 
 * refactor your code so that it becomes reusable
 
@@ -89,4 +86,14 @@ new XkcdBrowser(
 ).start()
 ```
 
-* add a second, independant, area in the page, that implements the same logic - possibly within a completely different layout
+* this should let you add a second, independant, area in the page, that implements the same logic - possibly within a completely different layout
+
+## option B 
+
+* keep track of the latest issue number, and disable the prev/next buttons when
+  they will be ineffective
+* *hint:* this might lead you to change `fetchIssue` so that it returns the current `num` in addition to displaying it
+
+## option C
+* display the issue title, date, and alternative text, in addition to its number
+* any other improvement that you find useful or interesting

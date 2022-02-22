@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 import markdown2
 
 with open("index.md") as f:

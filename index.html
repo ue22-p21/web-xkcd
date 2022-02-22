@@ -38,8 +38,9 @@
 
 <ul>
 <li><code>https://xkcd.now.sh/?comic=latest</code></li>
-<li><code>https://xkcd.now.sh/?comic=2583</code></li>
-<li><code>https://xkcd.now.sh/?comic=2582</code></li>
+<li><code>https://xkcd.now.sh/?comic=2584</code></li>
+<li><code>https://xkcd.now.sh/?comic=1</code></li>
+<li><code>https://xkcd.now.sh/?comic=0</code></li>
 </ul>
 
 <p>what does that content look like ? <br />
@@ -102,7 +103,6 @@ forth using the 2 arrow buttons</p>
 <p>change your code so that the application behaves that way; a suggested path to this end:</p>
 
 <ul>
-<li>change <code>fetchIssue</code> so that it returns the current <code>num</code> in addition to displaying it</li>
 <li>keep the current number in a state (a variable shared amongst all the
 functions)</li>
 <li>write <code>next()</code> and <code>previous()</code> functions and connect them to the buttons</li>
@@ -110,16 +110,11 @@ functions)</li>
 when relevant</li>
 </ul>
 
-<h2>step 3b (optional)</h2>
+<h1>optional steps</h1>
 
-<ul>
-<li>keep track of the latest issue number, and disable the prev/next buttons when
-they will be ineffective</li>
-<li>display the issue date in addition to its number</li>
-<li>any improvement that you deem useful...</li>
-</ul>
+<p>can be done independantly (in no particular order)</p>
 
-<h1>step 4 (optional)</h1>
+<h2>option A</h2>
 
 <ul>
 <li>refactor your code so that it becomes reusable</li>
@@ -139,7 +134,22 @@ that the gist of <code>code.js</code> becomes (for example)</p>
 </code></pre>
 
 <ul>
-<li>add a second, independant, area in the page, that implements the same logic - possibly within a completely different layout</li>
+<li>this should let you add a second, independant, area in the page, that implements the same logic - possibly within a completely different layout</li>
+</ul>
+
+<h2>option B</h2>
+
+<ul>
+<li>keep track of the latest issue number, and disable the prev/next buttons when
+they will be ineffective</li>
+<li><em>hint:</em> this might lead you to change <code>fetchIssue</code> so that it returns the current <code>num</code> in addition to displaying it</li>
+</ul>
+
+<h2>option C</h2>
+
+<ul>
+<li>display the issue title, date, and alternative text, in addition to its number</li>
+<li>any other improvement that you find useful or interesting</li>
 </ul>
 
 
