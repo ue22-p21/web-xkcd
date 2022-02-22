@@ -27,8 +27,8 @@ class XkcdBrowser {
                 })
             .catch(error => {
                 document.querySelector(this.s_num).textContent = `FETCH FAILED: ${error}`
-                this.current_num = "latest"
-                this.data = null
+                //this.current_num = "latest"
+                //this.data = null
             })
         }
 
@@ -37,11 +37,11 @@ class XkcdBrowser {
     }
 
     next() {
-        let next = parseInt(this.current_num) + 1
+        let next = this.current_num + 1
         this.fetchIssue(next)
     }
     previous() {
-        let previous = parseInt(this.current_num) - 1
+        let previous = this.current_num - 1
         this.fetchIssue(previous)
     }
 
@@ -82,4 +82,5 @@ window.addEventListener(
                 "#previous2",
                 "#reset2",
                 "#next2"
-            ).start()    })
+            ).start()
+    })
