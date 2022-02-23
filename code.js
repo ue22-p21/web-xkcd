@@ -55,13 +55,10 @@ class XkcdBrowser {
         info += `<h3>${data.title}</h3>`
         info += `<p>Issue #${data.num} (${data.day}/${data.month}/${data.day})</p>`
         info += `<p class="alt">${data.alt}</p>`
-                document.querySelector(this.s_num).innerHTML = info
+        document.querySelector(this.s_num).innerHTML = info
     }
 
     enable_buttons() {
-        console.log(this)
-        console.log(this.current_num)
-        console.log(this.current_num > 1)
         // enabled if num > 1
         document.querySelector(this.s_pre).disabled = !(this.current_num > 1)
         // enabled if num < max_num
