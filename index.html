@@ -7,9 +7,9 @@
 </head>
 
 <body>
-    <h1> an app with some networking</h1>
+    <h1> a toy app with some networking</h1>
 
-    for browsing the xkcd comics
+    <p>the xkcd comics</p>
 
     <br>
     <hr>
@@ -32,6 +32,12 @@
     it is preprocessed from the markdown file
     index.md - edit that file instead ! -->
 
+<h1>objectives</h1>
+
+<p>starting from this html page <code>index.html</code>, and specifically the dummy skeleton above, you will be building a small application for browsing the xkcd comics</p>
+
+<p>so you should obtain something a little bit like https://xkcd.com/, kind of...</p>
+
 <h1>step 0</h1>
 
 <p>use your browser to open in a separate page the URLs</p>
@@ -48,7 +54,7 @@ what can be the meaning of <code>num</code> and <code>img</code> fields ?</p>
 
 <p><em>hint</em>: numbers are sequential</p>
 
-<h1>requirements</h1>
+<h1>assignment</h1>
 
 <ul>
 <li>use the usual naming scheme, i.e.
@@ -74,7 +80,7 @@ possible conflict with other applications</li>
 <li>fetches the URL <br />
 <code>https://xkcd.now.sh/?comic=</code><em><code>num</code></em></li>
 <li>decodes it contents</li>
-<li>displays the corresponding 'num' in the status area</li>
+<li>displays the corresponding 'num' in the status area (and just that for now)</li>
 </ul>
 
 <h2>step 1b</h2>
@@ -97,7 +103,7 @@ in the page and do not overlap each other</p>
 
 <h1>step 3</h1>
 
-<p>for now we can only get the latest comic; we want to be able to move back and
+<p>so far we can only get the latest comic; now we want to be able to move back and
 forth using the 2 arrow buttons</p>
 
 <p>change your code so that the application behaves that way; a suggested path to this end:</p>

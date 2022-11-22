@@ -1,3 +1,9 @@
+# objectives
+
+starting from this html page `index.html`, and specifically the dummy skeleton above, you will be building a small application for browsing the xkcd comics
+
+so you should obtain something a little bit like https://xkcd.com/, kind of...
+
 # step 0
 
 use your browser to open in a separate page the URLs
@@ -12,7 +18,7 @@ what can be the meaning of `num` and `img` fields ?
 
 *hint*: numbers are sequential
 
-# requirements
+# assignment
 
 * use the usual naming scheme, i.e.
   * variables and functions in `lowercase` or `lowerCamelCase`
@@ -31,7 +37,7 @@ write a function `fetchIssue(num)` that
 * fetches the URL  
   `https://xkcd.now.sh/?comic=`*`num`*
 * decodes it contents
-* displays the corresponding 'num' in the status area
+* displays the corresponding 'num' in the status area (and just that for now)
 
 ## step 1b
 
@@ -53,7 +59,7 @@ in the page and do not overlap each other
 
 # step 3
 
-for now we can only get the latest comic; we want to be able to move back and
+so far we can only get the latest comic; now we want to be able to move back and
 forth using the 2 arrow buttons
 
 change your code so that the application behaves that way; a suggested path to this end:

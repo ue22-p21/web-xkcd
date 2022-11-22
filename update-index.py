@@ -1,11 +1,11 @@
 #! /usr/bin/env python
 import markdown2
 
-with open("index.md") as f:
+with open("instructions.md") as f:
     html = markdown2.markdown(
         f.read(), extras=['fenced-code-blocks'])
 
-with open("index-source.html") as f:
+with open("umbrella.html") as f:
     original = f.read()
 
 with open("index.html", 'w') as f:
